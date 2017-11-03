@@ -92,3 +92,6 @@ PRODUCT_COPY_FILES += \
 
 # Inherit from motorola msm8953-common
 $(call inherit-product, device/motorola/msm8953-common/msm8953.mk)
+
+# Verity
+PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/platform/soc/7824900.sdhci/by-name/oem
