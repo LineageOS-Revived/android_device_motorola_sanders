@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Vendor blobs
-$(call inherit-product-if-exists, vendor/motorola/sanders/sanders-vendor.mk)
+$(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)
 
 # Device Path
 DEVICE_PATH := device/motorola/sanders
