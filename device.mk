@@ -15,12 +15,9 @@
 # Vendor blobs
 $(call inherit-product, vendor/motorola/sanders/sanders-vendor.mk)
 
-# Device Path
-DEVICE_PATH := device/motorola/sanders
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay
+    $(LOCAL_PATH)/overlay
 
 # Screen density
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -32,11 +29,11 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle
 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    $(DEVICE_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(DEVICE_PATH)/configs/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
-    $(DEVICE_PATH)/configs/audio/audio_ext_spkr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_ext_spkr.conf \
-    $(DEVICE_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
+    $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/configs/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/configs/audio/audio_ext_spkr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_ext_spkr.conf \
+    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
@@ -47,13 +44,13 @@ PRODUCT_PACKAGES += \
     camera.device@1.0-impl
 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/camera/imx219_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx219_chromatix.xml \
-    $(DEVICE_PATH)/configs/camera/mot_imx258_bear_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_imx258_bear_chromatix.xml \
-    $(DEVICE_PATH)/configs/camera/mot_imx258_mono_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_imx258_mono_chromatix.xml \
-    $(DEVICE_PATH)/configs/camera/mot_s5k3l8_bear_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_s5k3l8_bear_chromatix.xml \
-    $(DEVICE_PATH)/configs/camera/mot_s5k3l8_mono_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_s5k3l8_mono_chromatix.xml \
-    $(DEVICE_PATH)/configs/camera/msm8953_mot_sanders_camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/msm8953_mot_sanders_camera.xml \
-    $(DEVICE_PATH)/configs/camera/s5k4h8_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/s5k4h8_chromatix.xml
+    $(LOCAL_PATH)/configs/camera/imx219_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/imx219_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/mot_imx258_bear_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_imx258_bear_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/mot_imx258_mono_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_imx258_mono_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/mot_s5k3l8_bear_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_s5k3l8_bear_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/mot_s5k3l8_mono_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/mot_s5k3l8_mono_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/msm8953_mot_sanders_camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/msm8953_mot_sanders_camera.xml \
+    $(LOCAL_PATH)/configs/camera/s5k4h8_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/s5k4h8_chromatix.xml
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
@@ -72,8 +69,8 @@ PRODUCT_PACKAGES += \
     Tag
 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
-    $(DEVICE_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
+    $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
@@ -86,12 +83,12 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
-    $(DEVICE_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
+    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
+    $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
 
 # Inherit from motorola msm8953-common
 $(call inherit-product, device/motorola/msm8953-common/msm8953.mk)
