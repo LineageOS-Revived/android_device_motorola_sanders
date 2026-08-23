@@ -26,9 +26,6 @@ TARGET_OTA_ASSERT_DEVICE := sanders
 # Display
 TARGET_SCREEN_DENSITY := 480
 
-# HIDL
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
-
 # Kernel
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_DTBTOOL_ARGS := --force-v3
@@ -53,11 +50,6 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/device.prop
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
-
-# SELinux
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
 # inherit from the proprietary version
 include vendor/motorola/sanders/BoardConfigVendor.mk
